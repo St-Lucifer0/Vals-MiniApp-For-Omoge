@@ -1,0 +1,75 @@
+.music-player {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.music-toggle,
+.mute-toggle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  box-shadow: 0 4px 15px rgba(192, 108, 132, 0.2);
+  cursor: pointer;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.music-toggle:hover,
+.mute-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(192, 108, 132, 0.3);
+}
+
+.music-toggle:active,
+.mute-toggle:active {
+  transform: scale(0.95);
+}
+
+.music-note {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.note-icon {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: musicBounce 0.8s ease-in-out infinite;
+}
+
+@keyframes musicBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .music-player {
+    top: 15px;
+    right: 15px;
+  }
+
+  .music-toggle,
+  .mute-toggle {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  .note-icon {
+    font-size: 1.25rem;
+  }
+}

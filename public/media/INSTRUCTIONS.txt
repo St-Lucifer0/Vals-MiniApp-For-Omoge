@@ -1,0 +1,38 @@
+📁 ADD YOUR IMAGES/VIDEOS HERE
+
+This folder is for the 7 cards showing reasons why you love her.
+
+REQUIRED FILES:
+Place your 7 images or videos in this folder with these exact names:
+
+1. card1.jpg (or card1.mp4 for video)
+2. card2.jpg (or card2.mp4 for video)
+3. card3.jpg (or card3.mp4 for video)
+4. card4.jpg (or card4.mp4 for video)
+5. card5.jpg (or card5.mp4 for video)
+6. card6.jpg (or card6.mp4 for video)
+7. card7.jpg (or card7.mp4 for video)
+
+SUPPORTED FORMATS:
+- Images: .jpg, .jpeg, .png, .gif, .webp
+- Videos: .mp4, .webm
+
+TIPS:
+- Keep file sizes reasonable (under 5MB per file for best performance)
+- For videos, keep them short (under 30 seconds)
+- Use landscape or square aspect ratios for best display
+- Make sure the files are named exactly as shown above
+
+TO CUSTOMIZE THE TEXT:
+Edit the file: src/components/CardReveal.jsx
+Look for the "reasons" array and change:
+- title: "Reason 1" (change the title)
+- text: "Your smile lights up my world" (change the reason text)
+
+Example:
+{
+  id: 1,
+  title: "Your Beautiful Smile",
+  text: "Every time you smile, my whole world lights up",
+  media: "card1.jpg"
+}

@@ -1,0 +1,162 @@
+.question-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.question-content {
+  text-align: center;
+  animation: fadeIn 0.8s ease-in;
+  max-width: 600px;
+}
+
+.hearts-decoration {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.floating-heart {
+  font-size: 2.5rem;
+  display: inline-block;
+  animation: floatHeart 3s ease-in-out infinite;
+}
+
+.floating-heart:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.floating-heart:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.floating-heart:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.floating-heart:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+@keyframes floatHeart {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+  }
+}
+
+.question-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 3rem;
+  animation: titlePulse 2s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.buttons-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 80px;
+}
+
+.yes-button {
+  background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+  color: white;
+  border: none;
+  padding: 1.5rem 4rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.yes-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(255, 107, 157, 0.5);
+}
+
+.yes-button:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.no-button {
+  background: #e0e0e0;
+  color: #666;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+.no-button:hover {
+  background: #d0d0d0;
+}
+
+@media (max-width: 768px) {
+  .question-title {
+    font-size: 2rem;
+  }
+
+  .hearts-decoration {
+    margin-bottom: 1.5rem;
+  }
+
+  .floating-heart {
+    font-size: 2rem;
+  }
+
+  .yes-button {
+    padding: 1.25rem 3rem;
+    font-size: 1.5rem;
+  }
+
+  .no-button {
+    padding: 0.875rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .buttons-container {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .question-title {
+    font-size: 1.75rem;
+  }
+
+  .yes-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.25rem;
+  }
+}

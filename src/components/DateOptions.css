@@ -1,0 +1,360 @@
+.date-options {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.confetti-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.confetti-piece {
+  position: absolute;
+  font-size: 2rem;
+  animation: confettiFall 4s linear infinite;
+  opacity: 0;
+}
+
+.confetti-piece:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.confetti-piece:nth-child(2) {
+  left: 25%;
+  animation-delay: 0.5s;
+}
+
+.confetti-piece:nth-child(3) {
+  left: 45%;
+  animation-delay: 1s;
+}
+
+.confetti-piece:nth-child(4) {
+  left: 60%;
+  animation-delay: 0.3s;
+}
+
+.confetti-piece:nth-child(5) {
+  left: 75%;
+  animation-delay: 0.8s;
+}
+
+.confetti-piece:nth-child(6) {
+  left: 90%;
+  animation-delay: 1.2s;
+}
+
+@keyframes confettiFall {
+  0% {
+    top: -10%;
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 110%;
+    opacity: 0.5;
+    transform: rotate(360deg);
+  }
+}
+
+.date-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  width: 100%;
+  animation: fadeIn 1s ease-in;
+}
+
+.success-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.success-icon {
+  font-size: 5rem;
+  animation: bounce 1s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.date-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  animation: titleBounce 0.6s ease-out;
+}
+
+@keyframes titleBounce {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.date-message {
+  font-size: 1.5rem;
+  color: #8b5a7c;
+  font-weight: 500;
+}
+
+.options-container {
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 15px 50px rgba(192, 108, 132, 0.2);
+  animation: slideUp 0.8s ease-out 0.3s backwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.options-title {
+  font-size: 1.75rem;
+  color: #c06c84;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.date-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.date-card {
+  background: #fff5fa;
+  border: 3px solid #ffd6eb;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.date-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+  border-color: #ffb3d9;
+}
+
+.date-card.selected {
+  border-color: #ff6b9d;
+  background: linear-gradient(135deg, #ffe0f0 0%, #fff5fa 100%);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+}
+
+.date-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: iconFloat 2s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.date-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #c06c84;
+  margin-bottom: 0.75rem;
+}
+
+.date-description {
+  font-size: 1.1rem;
+  color: #8b5a7c;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.date-details {
+  font-size: 0.95rem;
+  color: #a07a94;
+  font-style: italic;
+}
+
+.selected-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #ff6b9d;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  animation: badgePop 0.4s ease-out;
+}
+
+@keyframes badgePop {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.check-icon {
+  font-size: 1rem;
+}
+
+.final-message {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffe0f0 0%, #fff5fa 100%);
+  border-radius: 16px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.final-text {
+  font-size: 1.5rem;
+  color: #c06c84;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.hearts-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  color: #8b5a7c;
+  font-weight: 500;
+}
+
+.hearts-footer span:first-child,
+.hearts-footer span:last-child {
+  font-size: 1.5rem;
+  animation: heartPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .date-title {
+    font-size: 2.25rem;
+  }
+
+  .date-message {
+    font-size: 1.25rem;
+  }
+
+  .success-icon {
+    font-size: 4rem;
+  }
+
+  .options-container {
+    padding: 2rem;
+  }
+
+  .options-title {
+    font-size: 1.5rem;
+  }
+
+  .date-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .date-icon {
+    font-size: 3.5rem;
+  }
+
+  .date-card-title {
+    font-size: 1.35rem;
+  }
+
+  .final-text {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .date-title {
+    font-size: 2rem;
+  }
+
+  .options-container {
+    padding: 1.5rem;
+  }
+
+  .date-card {
+    padding: 1.5rem;
+  }
+
+  .date-icon {
+    font-size: 3rem;
+  }
+}
