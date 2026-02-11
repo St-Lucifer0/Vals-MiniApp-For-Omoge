@@ -1,0 +1,12 @@
+📁 ADD YOUR MUSIC FILE HERE
+
+Instructions:
+1. Download or obtain your music file (e.g., "Under the Influence" by Chris Brown)
+2. Place it in this `public` folder
+3. Rename it to: music.mp3
+4. The app will automatically play it when the user clicks the play button
+
+Note: Make sure you have the rights to use the music file.
+If you don't have the file, the app will still work, but without background music.
+
+Supported formats: MP3, WAV, OGG (MP3 recommended)
